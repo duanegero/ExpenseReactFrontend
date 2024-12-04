@@ -13,7 +13,7 @@ export default function ImageNav() {
           className="w-40 h-40 object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-110"
         />
       </Link>
-      <Link to="/expenses">
+      <Link to="/expenses/all">
         <img
           src={expenseImage}
           alt="Expenses"

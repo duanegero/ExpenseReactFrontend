@@ -10,7 +10,7 @@ import AllExpenses from "./pages/AllExpenses";
 import NewExpense from "./pages/NewExpense";
 import UpdateExpense from "./pages/UpdateExpense";
 import SupportPage from "./pages/SupportPage";
-import Login from "./pages/Login";
+import Login from "./supportPortalPage/Login";
 import ContactUs from "./pages/ContactUs";
 function App() {
   return (

@@ -63,7 +63,7 @@ export default function Support() {
       <h1 className="mb-14 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 font-bold shadow-lg rounded-lg text-5xl tracking-widest p-4">
         Support
       </h1>
-      <label className="text-gray-700 font-bold mb-2 tracking-wider">
+      <label className="text-gray-700 font-bold mb-2 tracking-wider text-2xl">
         Submit a Record Removal Request
       </label>
       <p className="text-gray-600 text-center mt-4 mb-6 w-96 p-2 h-32 tracking-wider">
@@ -71,7 +71,7 @@ export default function Support() {
         unique ID and the reason for your request below. Our team will carefully
         review your submission and follow up with you shortly
       </p>
-      <form onSubmit={submitRemoveRequest} className="w-80">
+      <form onSubmit={submitRemoveRequest} className="w-80 ">
         <textarea
           value={details}
           onChange={(e) => setDetails(e.target.value)}
@@ -85,8 +85,8 @@ export default function Support() {
           Remove Request
         </button>
       </form>
-
-      <label className="text-gray-700 font-bold mb-2 tracking-wider mt-8">
+      <hr className="my-12 w-4/5 border-t-2 border-gray-300" />
+      <label className="text-gray-700 font-bold mb-2 tracking-wider mt-8 text-2xl">
         Request a New User
       </label>
       <p className="text-gray-600 text-center mt-4 mb-6 w-96 p-2 h-32 tracking-wider">
@@ -119,11 +119,12 @@ export default function Support() {
             type="submit"
             className="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full mt-6"
           >
-            Add User
+            User Request
           </button>
         </div>
       </form>
-      <p className="mt-6 text-gray-700 text-center italic">
+      <hr className="my-12 w-4/5 border-t-2 border-gray-300" />
+      <p className="mt-12 text-gray-700 text-center italic">
         * For additional assistance, please visit our Contact Us page to reach
         out directly to our support team.
       </p>
