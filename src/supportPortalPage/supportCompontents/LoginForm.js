@@ -1,11 +1,15 @@
 import React, { useState } from "react"; //importing react and useState
 import axios from "axios"; //imporing axios to send requests
+import { useNavigate } from "react-router-dom"; //importing use nav to go from page to page
 
 //setting a variable to handle api url
 const apiUrl = "http://localhost:3001";
 
 //creating a function to export
 export default function LoginForm() {
+  //creating a varible to handle navigatiion
+  const navigate = useNavigate();
+
   //creating variables to handle user inputs
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -40,6 +44,7 @@ export default function LoginForm() {
       alert(`Welcome ${username}`);
       setUsername("");
       setPassword("");
+      navigate("/supportPortal");
     } catch (error) {
       console.log("Error", error); //logging the erroe
       alert("Login failed, try again"); //alerting to try again

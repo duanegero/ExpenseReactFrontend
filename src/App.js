@@ -10,8 +10,9 @@ import AllExpenses from "./pages/AllExpenses";
 import NewExpense from "./pages/NewExpense";
 import UpdateExpense from "./pages/UpdateExpense";
 import SupportPage from "./pages/SupportPage";
-import Login from "./supportPortalPage/Login";
 import ContactUs from "./pages/ContactUs";
+import Login from "./supportPortalPage/Login";
+import SupportHome from "./supportPortalPage/SupportHome";
 function App() {
   return (
     <div>
@@ -26,9 +27,10 @@ function App() {
           <Route path="/expenses/all" element={<AllExpenses />} />
           <Route path="/expenses/new" element={<NewExpense />} />
           <Route path="/expenses/update" element={<UpdateExpense />} />
+          <Route path="/contactus" element={<ContactUs />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/supportPortal" element={<SupportHome />} />
         </Routes>
       </BrowserRouter>
     </div>
