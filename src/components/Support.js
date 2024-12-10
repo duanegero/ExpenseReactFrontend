@@ -17,11 +17,14 @@ export default function Support() {
     //start try and catch
     try {
       //sending axios request with api url and new object
-      const response = await axios.post(`${apiUrl}/support`, { details });
+      const response = await axios.post(`${apiUrl}/supportRequest`, {
+        details,
+      });
       //if response status ok alert user
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status < 300) {
         alert("Your request has been submitted");
         setDetails("");
+        console.log(response.data);
       } else {
         alert("Your request hasn't been submitted");
       }
@@ -38,16 +41,17 @@ export default function Support() {
     //start try and catch
     try {
       //sending axios request with api url and new object
-      const response = await axios.post(`${apiUrl}/support/new-user`, {
+      const response = await axios.post(`${apiUrl}/supportRequest/new-user`, {
         newUserName,
         newUserRole,
       });
 
       //if response status ok alert user
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status < 300) {
         alert("New user has been submitted");
         setNewUserName("");
         setNewUserRole("");
+        console.log(response.data);
       } else {
         alert("Your request hasn't been submitted");
       }

@@ -62,19 +62,21 @@ export default function DeleteExpense() {
   return (
     <>
       <div className="flex flex-col items-center justify-center p-3 h-full">
-        <h2 className="text-lg font-appleSystem mb-4">Delete Expense</h2>
+        <h2 className="text-lg font-appleSystem mb-4 tracking-wider">
+          Delete Expense
+        </h2>
         <form
           onSubmit={FindExpenseId}
           className="flex flex-col items-center w-full"
         >
           <input
-            className="placeholder-gray-400 p-3 mb-3"
+            className="placeholder-gray-400 p-3 mb-3 text-black"
             type="number"
             placeholder="Enter ID..."
             value={expenseId}
             onChange={(e) => setExpenseId(e.target.value)}
           />
-          <button className="bg-blue-500 text-white rounded px-4 py-2 hover:shadow-md hover:shadow-blue-300 transition-shadow">
+          <button className="bg-gray-900 text-white rounded px-4 py-2 hover:shadow-md hover:shadow-blue-100 transition-shadow">
             Submit
           </button>
         </form>

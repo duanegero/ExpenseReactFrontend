@@ -46,26 +46,28 @@ export default function AddUser() {
   return (
     <>
       <div className="flex flex-col items-center justify-center p-3 h-full">
-        <h2 className="text-lg font-appleSystem mb-4">Add User</h2>
+        <h2 className="text-lg font-appleSystem mb-4 tracking-wider">
+          Add User
+        </h2>
         <form
           onSubmit={submitNewUser}
           className="flex flex-col items-center w-full"
         >
           <input
-            className="placeholder-gray-400 p-3 mb-3"
+            className="placeholder-gray-400 p-3 mb-3 text-black"
             type="text"
             placeholder="New Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            className="placeholder-gray-400 p-3 mb-3"
+            className="placeholder-gray-400 p-3 mb-3 text-black"
             type="text"
             placeholder="New Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="bg-blue-500 text-white rounded px-4 py-2 hover:shadow-md hover:shadow-blue-300 transition-shadow">
+          <button className="bg-gray-900 text-white rounded px-4 py-2 hover:shadow-md hover:shadow-blue-100 transition-shadow">
             Submit
           </button>
         </form>
