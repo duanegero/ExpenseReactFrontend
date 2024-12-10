@@ -11,7 +11,7 @@ export default function SupportHome() {
   });
 
   return (
-    <>
+    <div className="bg-gray-900 text-white min-h-screen">
       <SupportHeader />
       <div className="grid grid-cols-2 gap-4 p-8 m-5 ">
         <div className="p-8 border border-gray-300">
@@ -27,6 +27,6 @@ export default function SupportHome() {
           <DeleteUser />
         </div>
       </div>
-    </>
+    </div>
   );
 }
