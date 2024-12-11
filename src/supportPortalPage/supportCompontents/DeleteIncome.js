@@ -22,8 +22,11 @@ export default function DeleteIncome() {
     console.log(depositId);
 
     try {
+      const token = localStorage.getItem("token");
       //sending a get request to make sure id is in table
-      const response = await axios.get(`${apiUrl}/income/${depositId}`);
+      const response = await axios.get(`${apiUrl}/income/${depositId}`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
 
       //if response 200 ok
       if (response.status === 200) {
@@ -35,7 +38,9 @@ export default function DeleteIncome() {
         //if user confirms delete
         if (isConfirmed) {
           //send a delete request
-          await axios.delete(`${apiUrl}/income/${depositId}`);
+          await axios.delete(`${apiUrl}/income/${depositId}`, {
+            headers: { authorization: `Bearer ${token}` },
+          });
           //alert user record deleted
           alert(`ID: ${depositId} Deleted`);
         }

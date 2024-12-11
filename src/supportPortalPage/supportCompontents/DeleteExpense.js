@@ -22,8 +22,11 @@ export default function DeleteExpense() {
     console.log(expenseId);
 
     try {
+      const token = localStorage.getItem("token");
       //sending a get request to make sure id is in table
-      const response = await axios.get(`${apiUrl}/expenses/${expenseId}`);
+      const response = await axios.get(`${apiUrl}/expenses/${expenseId}`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
 
       //if response 200 ok
       if (response.status === 200) {
@@ -35,7 +38,9 @@ export default function DeleteExpense() {
         //if user confirms delete
         if (isConfirmed) {
           //send a delete request
-          await axios.delete(`${apiUrl}/expenses/${expenseId}`);
+          await axios.delete(`${apiUrl}/expenses/${expenseId}`, {
+            headers: { authorization: `Bearer ${token}` },
+          });
           //alert user record deleted
           alert(`ID: ${expenseId} Deleted`);
         }

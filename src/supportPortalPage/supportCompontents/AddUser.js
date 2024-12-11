@@ -26,10 +26,12 @@ export default function AddUser() {
     };
 
     try {
+      const token = localStorage.getItem("token");
       //sending a post request, with response variable
       const response = await axios.post(
         `${apiUrl}/support/add-user`,
-        newUserDetails
+        newUserDetails,
+        { headers: { authorization: `Bearer ${token}` } }
       );
       //log data for testing
       console.log("New User", response.data);

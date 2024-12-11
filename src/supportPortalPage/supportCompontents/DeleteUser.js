@@ -22,8 +22,11 @@ export default function DeleteUser() {
     console.log(userId);
 
     try {
+      const token = localStorage.getItem("token");
       //send a get request to make sure Id is there
-      const response = await axios.get(`${apiUrl}/support/get-user/${userId}`);
+      const response = await axios.get(`${apiUrl}/support/get-user/${userId}`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
 
       //if response data 200 ok
       if (response.status === 200) {
@@ -34,7 +37,9 @@ export default function DeleteUser() {
         //if confirm delete
         if (isConfirmed) {
           //send a delete request to api
-          await axios.delete(`${apiUrl}/support/delete-user/${userId}`);
+          await axios.delete(`${apiUrl}/support/delete-user/${userId}`, {
+            headers: { authorization: `Bearer ${token}` },
+          });
           //alret delete
           alert(`ID: ${userId} Deleted`);
         }

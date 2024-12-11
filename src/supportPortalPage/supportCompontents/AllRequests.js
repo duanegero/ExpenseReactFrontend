@@ -13,8 +13,11 @@ export default function AllRequests() {
   const getRequests = async () => {
     setLoading(true);
     try {
+      const token = localStorage.getItem("token");
       //sending axios request, putting in variable
-      const response = await axios.get(`${apiUrl}/supportRequests`);
+      const response = await axios.get(`${apiUrl}/supportRequests`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
       //log response for testing
       console.log(response.data);
       //set requests as response data
