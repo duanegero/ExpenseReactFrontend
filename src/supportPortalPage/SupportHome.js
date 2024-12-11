@@ -4,6 +4,8 @@ import DeleteExpense from "./supportCompontents/DeleteExpense";
 import DeleteIncome from "./supportCompontents/DeleteIncome";
 import DeleteUser from "./supportCompontents/DeleteUser";
 import AddUser from "./supportCompontents/AddUser";
+import AllRequests from "./supportCompontents/AllRequests";
+import SupportFooter from "./supportCompontents/SupportFooter";
 
 export default function SupportHome() {
   useEffect(() => {
@@ -27,6 +29,8 @@ export default function SupportHome() {
           <DeleteUser />
         </div>
       </div>
+      <AllRequests />
+      <SupportFooter />
     </div>
   );
 }
