@@ -22,6 +22,7 @@ export default function DeleteIncome() {
     console.log(depositId);
 
     try {
+      //getting token from local storage
       const token = localStorage.getItem("token");
       //sending a get request to make sure id is in table
       const response = await axios.get(`${apiUrl}/income/${depositId}`, {

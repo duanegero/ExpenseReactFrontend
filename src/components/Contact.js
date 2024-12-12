@@ -11,16 +11,19 @@ export default function Contact() {
   const submitCallbackDeatails = async (event) => {
     event.preventDefault();
 
+    //if fields aren't filled alert user
     if (!name || (!phoneNumber && !email)) {
       alert("Name and Phone Number or Email required");
     }
 
     try {
+      //sending a post request to api with object
       const response = await axios.post(`${apiUrl}/contact`, {
         name,
         phoneNumber,
         email,
       });
+      //if response status ok alert and empty fields
       if (response.status === 200) {
         alert("Your request has been submitted");
         setPhoneNumber("");

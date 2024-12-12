@@ -4,6 +4,7 @@ import DeleteExpense from "./supportCompontents/DeleteExpense";
 import DeleteIncome from "./supportCompontents/DeleteIncome";
 import DeleteUser from "./supportCompontents/DeleteUser";
 import AddUser from "./supportCompontents/AddUser";
+import DeleteRequest from "./supportCompontents/DeleteRequest";
 import AllRequests from "./supportCompontents/AllRequests";
 import SupportFooter from "./supportCompontents/SupportFooter";
 
@@ -27,6 +28,15 @@ export default function SupportHome() {
         </div>
         <div className="p-8 border border-gray-300">
           <DeleteUser />
+        </div>
+        <div className="p-8 border border-gray-300">
+          <DeleteRequest />
+        </div>
+        <div className="p-8 border border-gray-300">
+          <p className="tracking-wider">
+            Click the "See Requests" button below to see list of all active
+            requests.
+          </p>
         </div>
       </div>
       <AllRequests />

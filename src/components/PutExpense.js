@@ -31,10 +31,12 @@ export default function PutExpense() {
     };
 
     try {
+      //send a put request to api with new details
       const response = await axios.put(
         `${apiUrl}/expenses/${id}`,
         updatedExpenseDetails
       );
+      //log for testing, set data to response
       console.log(response.data);
       setSubmittedData(response.data);
     } catch (error) {
@@ -42,7 +44,7 @@ export default function PutExpense() {
       alert("Expense Not Added");
       console.log(error);
     }
-
+    //clear all the input fields
     setId("");
     setPayee("");
     setAmount("");

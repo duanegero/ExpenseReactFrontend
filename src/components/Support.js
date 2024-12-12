@@ -17,7 +17,7 @@ export default function Support() {
     //start try and catch
     try {
       //sending axios request with api url and new object
-      const response = await axios.post(`${apiUrl}/supportRequest`, {
+      const response = await axios.post(`${apiUrl}/supportRequests`, {
         details,
       });
       //if response status ok alert user
@@ -41,7 +41,7 @@ export default function Support() {
     //start try and catch
     try {
       //sending axios request with api url and new object
-      const response = await axios.post(`${apiUrl}/supportRequest/new-user`, {
+      const response = await axios.post(`${apiUrl}/supportRequests/new-user`, {
         newUserName,
         newUserRole,
       });
